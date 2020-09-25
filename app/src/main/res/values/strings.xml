@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">COVID-19 Symptom Tracker App</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="upload_signs">Upload Signs</string>
+    <string name="measure_heart_rate">Measure Heart Rate</string>
+    <string name="measure_respiratory_rate">Measure Respiratory Rate</string>
+    <string name="symptom_logging_page">Symptom Logging Page</string>
+    <string name="upload_symptoms">Upload Symptoms</string>
+    <string name="capture_video">Capture Video</string>
+    <string name="press_your_index_finger_softly_on_the_camera_lens_while_covering_the_flash_light">Press your index finger softly on the camera lens while covering the flash light</string>
+    <string-array name="symptoms_array">
+        <item>Nausea</item>
+        <item>Headache</item>
+        <item>Diarrhea</item>
+        <item>Sore Throat</item>
+        <item>Fever</item>
+        <item>Muscle Ache</item>
+        <item>Loss of Smell or Taste</item>
+        <item>Cough</item>
+        <item>Shortness of Breath</item>
+        <item>Feeling tired</item>
+    </string-array>
 </resources>
