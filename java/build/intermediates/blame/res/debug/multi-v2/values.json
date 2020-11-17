@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\debar\\AndroidStudioProjects\\COVID19SymptomTrackerApp\\java\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\debar\\AndroidStudioProjects\\COVID19SymptomTrackerApp\\COVID19SymptomTrackerApp\\java\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\debar\\AndroidStudioProjects\\COVID19SymptomTrackerApp\\java\\src\\main\\res\\values\\attrs.xml",
+                    "source": "C:\\Users\\debar\\AndroidStudioProjects\\COVID19SymptomTrackerApp\\COVID19SymptomTrackerApp\\java\\src\\main\\res\\values\\attrs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

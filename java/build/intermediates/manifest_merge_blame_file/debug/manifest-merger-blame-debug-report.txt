@@ -3,7 +3,7 @@
 3    package="org.opencv" >
 4
 5    <uses-sdk android:minSdkVersion="1" />
-5-->C:\Users\debar\AndroidStudioProjects\COVID19SymptomTrackerApp\java\src\main\AndroidManifest.xml
+5-->C:\Users\debar\AndroidStudioProjects\COVID19SymptomTrackerApp\COVID19SymptomTrackerApp\java\src\main\AndroidManifest.xml
 6
 7    <application />
 8

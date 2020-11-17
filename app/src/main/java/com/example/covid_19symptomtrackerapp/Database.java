@@ -23,12 +23,14 @@ public class Database extends SQLiteOpenHelper implements BaseColumns {
     public static final String COLUMN_10 = "COUGH";
     public static final String COLUMN_11 = "SHORTNESS_OF_BREATH";
     public static final String COLUMN_12 = "FEELING_TIRED";
+    public static final String COLUMN_13 = "LOCATION";
 
-    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + TABLE_NAME + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_1 + " FLOAT, " + COLUMN_2 + " FLOAT, " + COLUMN_3 + " INTEGER, " + COLUMN_4 + " INTEGER, " + COLUMN_5 + " INTEGER, " + COLUMN_6 + " INTEGER, " + COLUMN_7 + " INTEGER, " + COLUMN_8 + " INTEGER, " + COLUMN_9 + " INTEGER, " + COLUMN_10 + " INTEGER, " + COLUMN_11 + " INTEGER, " + COLUMN_12 + " INTEGER)";
+    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + TABLE_NAME + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_1 + " FLOAT, " + COLUMN_2 + " FLOAT, " + COLUMN_3 + " INTEGER, " + COLUMN_4 + " INTEGER, " + COLUMN_5 + " INTEGER, " + COLUMN_6 + " INTEGER, " + COLUMN_7 + " INTEGER, " + COLUMN_8 + " INTEGER, " + COLUMN_9 + " INTEGER, " + COLUMN_10 + " INTEGER, " + COLUMN_11 + " INTEGER, " + COLUMN_12 + " INTEGER, " + COLUMN_13 + " TEXT)";
     private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     public String heartRate = "0";
     public String respiratoryRate = "0";
+    public String location = "0";
 
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -47,12 +49,16 @@ public class Database extends SQLiteOpenHelper implements BaseColumns {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public void setHeartRate(String heartRate){
+    public void setHeartRate(String heartRate) {
         this.heartRate = heartRate;
     }
 
-    public void setRespiratoryRate(String respiratoryRate){
+    public void setRespiratoryRate(String respiratoryRate) {
         this.respiratoryRate = respiratoryRate;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public void insertData(int[] ratingList) {
@@ -70,6 +76,7 @@ public class Database extends SQLiteOpenHelper implements BaseColumns {
         values.put(COLUMN_10, ratingList[7]);
         values.put(COLUMN_11, ratingList[8]);
         values.put(COLUMN_12, ratingList[9]);
+        values.put(COLUMN_13, location);
         db.insert(TABLE_NAME, null, values);
     }
 }

@@ -19,12 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     Database myDatabase;
     Accelerometer myAccelerometer;
-
     TextView heartRateTextView;
     TextView respiratoryRateTextView;
+    TextView latitudeTextView;
+    TextView longitudeTextView;
 
     public String heartRate = "0";
     public String respiratoryRate = "0";
+    public String latitude = "0";
+    public String longitude = "0";
+    public String location = "0";
 
     float timestamp;
     Intent intent;
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent symptomsIntent = new Intent(getApplicationContext(), MainActivity2.class);
                     symptomsIntent.putExtra("HEART_RATE", heartRate);
                     symptomsIntent.putExtra("RESPIRATORY_RATE", respiratoryRateTextView.getText().toString());
+                    symptomsIntent.putExtra("LOCATION", location);
                     startActivity(symptomsIntent);
                 }
                 catch (Exception e) {
@@ -109,6 +114,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Latitude and Longitude Text View
+        latitudeTextView = findViewById(R.id.latitude);
+        longitudeTextView = findViewById(R.id.longitude);
+
+        // Get Location Button
+        Button getLocationButton = findViewById(R.id.getLocation);
+        getLocationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent getLocationIntent = new Intent(getApplicationContext(), LocationActivity.class);
+                    startActivityForResult(getLocationIntent, 2);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -118,6 +142,17 @@ public class MainActivity extends AppCompatActivity {
                 heartRate = data.getStringExtra("HEART_RATE");
                 Toast.makeText(this, "Heart Rate= " + heartRate, Toast.LENGTH_LONG).show();
                 heartRateTextView.setText(heartRate);
+            }
+        }
+        if (requestCode == 2 && resultCode == 2) {
+            if (data.hasExtra("LOCATION")) {
+                location = data.getStringExtra("LOCATION");
+                Toast.makeText(this, "Location= " + location, Toast.LENGTH_LONG).show();
+                String [] i = location.split(", ");
+                latitude = i[0];
+                longitude = i[1];
+                latitudeTextView.setText(latitude);
+                longitudeTextView.setText(longitude);
             }
         }
     }

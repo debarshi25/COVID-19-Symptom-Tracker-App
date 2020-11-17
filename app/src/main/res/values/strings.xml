@@ -8,6 +8,9 @@
     <string name="upload_symptoms">Upload Symptoms</string>
     <string name="capture_video">Capture Video</string>
     <string name="press_your_index_finger_softly_on_the_camera_lens_while_covering_the_flash_light">Press your index finger softly on the camera lens while covering the flash light</string>
+    <string name="get_location">Get Location</string>
+    <string name="location">Location</string>
+    <string name="upload_to_server">Upload to Server</string>
     <string-array name="symptoms_array">
         <item>Nausea</item>
         <item>Headache</item>
